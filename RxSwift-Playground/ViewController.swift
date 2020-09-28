@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loadImage(_ sender: UIButton) {
+// ----> Domain 오류로 실행불가
 //        self.loadImageAsync(from: self.imageUrl)
 //        Observable<String>.just("800x600")
 //            .observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
 //            .subscribe(onNext: { image in
 //                self.imageView.image = image
 //            }).disposed(by: disposeBag)
+        
         Observable<String>.just("https://madi-1302397712.cos.ap-seoul.myqcloud.com/images/5f068824571c4a3c2510df27_1599185518291.png")
             .map { URL(string: $0) }
             .map { $0! }
@@ -55,10 +57,19 @@ class ViewController: UIViewController {
             .map { UIImage(data: $0) }
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
             .observeOn(MainScheduler.instance)
+            .do(onNext: { image in
+                if let _image = image {
+                    print(_image.size)
+                }
+            })
             .subscribe(onNext: { [weak self] image in
                 self?.imageView.image = image
         }).disposed(by: disposeBag)
     }
+    
+//SideEffect가 혀용되는 공간
+//    1. subscribe
+//    2. do
     
 //    SubscribeOn -------------------------------------------
 //    SubscribeOn은 구독(subscribe)에서 사용할 스레드를 지정
@@ -67,12 +78,6 @@ class ViewController: UIViewController {
 //    ObserveOn ----------------------------------------------
 //    ObserveOn은 Observable이 다음처리를 진행할때 사용할 스레드를 지정
 //    ObserveOn이 선언된 후 처리가 진행뒤 다른 ObserveOn이 선언시 다른 ObserveOn에서 선언한 스레드로 변경되어 이후 처리를 진행한다.
-    
-    let disposable = Observable<String>.create { (observer) -> Disposable in
-        observer.onNext("asdf")
-        observer.onCompleted()
-        return Disposables.create()
-    }
     
     @IBAction func cancelImage(_ sender: UIButton) {
     }
