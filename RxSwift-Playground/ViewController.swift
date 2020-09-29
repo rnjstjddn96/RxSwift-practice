@@ -66,6 +66,7 @@ class ViewController: UIViewController {
                 self?.imageView.image = image
         }).disposed(by: disposeBag)
     }
+//asdf
     
 //SideEffect가 혀용되는 공간
 //    1. subscribe
