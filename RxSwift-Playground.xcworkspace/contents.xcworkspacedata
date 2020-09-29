@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RxSwift-playground.playground">
+   </FileRef>
+   <FileRef
       location = "group:RxSwift-Playground.xcodeproj">
    </FileRef>
    <FileRef

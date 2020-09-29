@@ -51,11 +51,11 @@ class ViewController: UIViewController {
 //            }).disposed(by: disposeBag)
         
         Observable<String>.just("https://madi-1302397712.cos.ap-seoul.myqcloud.com/images/5f068824571c4a3c2510df27_1599185518291.png")
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
             .map { URL(string: $0) }
             .map { $0! }
             .map { try Data(contentsOf: $0) }
             .map { UIImage(data: $0) }
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
             .observeOn(MainScheduler.instance)
             .do(onNext: { image in
                 if let _image = image {

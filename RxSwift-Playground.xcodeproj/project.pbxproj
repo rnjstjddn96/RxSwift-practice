@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		77E630A23A862A8DB47EABDB /* Pods_RxSwift_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE866D89B45C0D0BA875145 /* Pods_RxSwift_Playground.framework */; };
+		7D0974E62522C31300D0861A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0974E52522C31300D0861A /* LoginViewController.swift */; };
+		7D0974EA2522FA7200D0861A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0974E92522FA7200D0861A /* LoginViewModel.swift */; };
 		EA6F767A2521F7050006D14C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F76792521F7050006D14C /* AppDelegate.swift */; };
 		EA6F767C2521F7050006D14C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F767B2521F7050006D14C /* SceneDelegate.swift */; };
 		EA6F767E2521F7050006D14C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6F767D2521F7050006D14C /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		2FE866D89B45C0D0BA875145 /* Pods_RxSwift_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67AF891C2E28C415C114CADA /* Pods-RxSwift-Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Playground.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-Playground/Pods-RxSwift-Playground.release.xcconfig"; sourceTree = "<group>"; };
+		7D0974E52522C31300D0861A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D0974E92522FA7200D0861A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AFBA1F5C0600603831F980FB /* Pods-RxSwift-Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Playground.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift-Playground/Pods-RxSwift-Playground.debug.xcconfig"; sourceTree = "<group>"; };
 		EA6F76762521F7050006D14C /* RxSwift-Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6F76792521F7050006D14C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +32,6 @@
 		EA6F76822521F7070006D14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6F76852521F7070006D14C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA6F76872521F7070006D14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA6F768D2521F77C0006D14C /* RxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +86,13 @@
 			children = (
 				EA6F76792521F7050006D14C /* AppDelegate.swift */,
 				EA6F767B2521F7050006D14C /* SceneDelegate.swift */,
+				7D0974E92522FA7200D0861A /* LoginViewModel.swift */,
+				7D0974E52522C31300D0861A /* LoginViewController.swift */,
 				EA6F767D2521F7050006D14C /* ViewController.swift */,
 				EA6F767F2521F7050006D14C /* Main.storyboard */,
 				EA6F76822521F7070006D14C /* Assets.xcassets */,
 				EA6F76842521F7070006D14C /* LaunchScreen.storyboard */,
 				EA6F76872521F7070006D14C /* Info.plist */,
-				EA6F768D2521F77C0006D14C /* RxSwift.playground */,
 			);
 			path = "RxSwift-Playground";
 			sourceTree = "<group>";
@@ -208,8 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D0974E62522C31300D0861A /* LoginViewController.swift in Sources */,
 				EA6F767E2521F7050006D14C /* ViewController.swift in Sources */,
 				EA6F767A2521F7050006D14C /* AppDelegate.swift in Sources */,
+				7D0974EA2522FA7200D0861A /* LoginViewModel.swift in Sources */,
 				EA6F767C2521F7050006D14C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2VUB7Y3L2;
 				INFOPLIST_FILE = "RxSwift-Playground/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2VUB7Y3L2;
 				INFOPLIST_FILE = "RxSwift-Playground/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
